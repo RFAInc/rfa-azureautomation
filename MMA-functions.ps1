@@ -9,7 +9,7 @@ function Install-MicrosoftMonitoringAgent{
         [ValidateSet("64-bit", "32-bit")]
         [string]$Architecture = "64-bit",
         [Parameter(Mandatory=$false)] 
-        [String] [String] $DLPath = (Get-Location).Path
+        [String]$DLPath = (Get-Location).Path
     )
     $DLLink = switch ($Architecture){
         '64-bit' {'https://go.microsoft.com/fwlink/?LinkId=828603'} 
