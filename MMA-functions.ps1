@@ -16,7 +16,7 @@ function Install-MicrosoftMonitoringAgent{
         '32-bit' {'https://go.microsoft.com/fwlink/?LinkId=828604'}
     }
     $PackagePath = "$DLPath\MMA_$Architecture.exe"
-    (New-Object System.Net.WebClient).DownloadFile($DLLink, "$DLPath")
+    (New-Object System.Net.WebClient).DownloadFile($DLLink, "$PackagePath")
     $Arguments = '/C:"setup.exe /qn ADD_OPINSIGHTS_WORKSPACE=1 '+  "OPINSIGHTS_WORKSPACE_ID=$WorkspaceID " + "OPINSIGHTS_WORKSPACE_KEY=$WorkspaceKey " +'AcceptEndUserLicenseAgreement=1"'
     Start-Process $PackagePath -ArgumentList $Arguments
 }
